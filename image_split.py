@@ -2,14 +2,15 @@
 # @Author  : LeeYotta
 import os
 import cv2
-read_path = input("Please input the original image path:") # "./test"
-save_path = input("Please input the splitted image path:") # "./test_result"
+
+read_path = input("Please input the original image path:")  # "./test"
+save_path = input("Please input the splitted image path:")  # "./test_result"
 if not os.path.exists(save_path):
     os.makedirs(save_path)
-sub_image_num = int(input("Please input the sub_image_num(a square num):")) # 4
-split_num = int(pow(sub_image_num,0.5))
-datanames = os.listdir(read_path)
-for i in datanames:
+sub_image_num = int(input("Please input the sub_image_num(a square num):"))  # 4
+split_num = int(pow(sub_image_num, 0.5))
+data_names = os.listdir(read_path)
+for i in data_names:
     # print(os.path.splitext(i))
     name = os.path.splitext(i)[0]
     if os.path.splitext(i)[1] == ".JPG":
@@ -30,5 +31,5 @@ for i in datanames:
                     image_roi = src[j * sub_height:, i * sub_width:]
                 sub_images.append(image_roi)
         for k, img in enumerate(sub_images):
-            cv2.imwrite(save_path + "//" + name + "_"+ str(k) + '.png', img)
-            # print(save_path + name + "_"+ str(k) + '.png has been compeleted!')
+            cv2.imwrite(save_path + "//" + name + "_" + str(k) + '.png', img)
+            # print(save_path + name + "_"+ str(k) + '.png has been completed!')
