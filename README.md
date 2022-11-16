@@ -14,3 +14,7 @@ Some Scripts help work
 - replace_labels.py
 - search_filename_by_keyword.py
 - search_pdfcontent_by_keyword.py
+- subcontent2rootfolder.ipynb
+- 图像操作
+  - 图像基本操作.ipynb
+  - 图像处理.ipynb
