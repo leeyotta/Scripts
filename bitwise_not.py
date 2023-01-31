@@ -4,7 +4,7 @@ import shutil
 import cv2
 
 src_dir = './labels/'
-dstpath = './'
+dstpath = './labels_pos/'
 src_file_list = glob.glob(src_dir +'*.png')
 for srcfile in src_file_list:
     fpath, fname=os.path.split(srcfile)             # 分离文件名和路径
